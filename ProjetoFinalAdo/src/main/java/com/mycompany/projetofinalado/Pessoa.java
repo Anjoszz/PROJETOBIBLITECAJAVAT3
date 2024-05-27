@@ -1,22 +1,38 @@
-
 package com.mycompany.projetofinalado;
 
- abstract public class Pessoa {
-    protected String nome;
-    protected String cpf;
-    protected int idade;
-    protected String cargo = null;
-    
-    public Pessoa(String nome, String cpf, int idade, String cargo){
-        this.nome = nome;
-        this.cpf = cpf;
-        this.idade = idade;
-        this.cargo = cargo;
-    }
-    
-    public String InfoPessoa(){
-        return "Nome: " + nome + " cpf: " + cpf + " Idade: " + idade + "Cargo: " + cargo; 
-  }
- 
- }
+public class Pessoa {
+    private String nome;
+    private int idade;
+    private String cpf;
 
+    public Pessoa(String nome, int idade, String cpf) {
+        this.nome = nome;
+        this.idade = idade;
+        this.cpf = cpf;
+    }
+
+    // Getters e setters
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public void setIdade(int idade) {
+        this.idade = idade;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+}

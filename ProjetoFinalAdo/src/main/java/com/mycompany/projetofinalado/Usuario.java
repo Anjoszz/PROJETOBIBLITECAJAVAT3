@@ -1,23 +1,32 @@
 package com.mycompany.projetofinalado;
 
+import java.util.ArrayList;
+import java.util.List;
 
 public class Usuario extends Pessoa {
-    protected String numeroMatricula;
-    protected String Email;
-    private String senha;
-    protected String[] HistoricoEmprestimo; 
-    
-    
-    
-    public Usuario(String nome, String cpf, int idade, String cargo, String HistoticoEmprestimo){
-        super(nome,cpf,idade, cargo);
-        HistoricoEmprestimo = new String[100];
+    private String numeroMatricula;
+    private List<Emprestimo> historicoEmprestimos;
+
+    public Usuario(String nome, int idade, String cpf, String numeroMatricula) {
+        super(nome, idade, cpf);
+        this.numeroMatricula = numeroMatricula;
+        this.historicoEmprestimos = new ArrayList<>();
     }
-    
-    
-    @Override
-    public String InfoPessoa(){
-        cargo = "usuario";
-        return "Nome: " + nome + " cpf: " + cpf + " Idade: " + idade + "Cargo: " + cargo + " Historico de emprestimo " + HistoricoEmprestimo; 
-  }
+
+    // Getters e setters
+    public String getNumeroMatricula() {
+        return numeroMatricula;
+    }
+
+    public void setNumeroMatricula(String numeroMatricula) {
+        this.numeroMatricula = numeroMatricula;
+    }
+
+    public List<Emprestimo> getHistoricoEmprestimos() {
+        return historicoEmprestimos;
+    }
+
+    public void addEmprestimo(Emprestimo emprestimo) {
+        this.historicoEmprestimos.add(emprestimo);
+    }
 }
